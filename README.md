@@ -1,6 +1,6 @@
 # BannerPager
 
-![效果图](http://114.67.156.211/github/BannerPager/gif.gif)
+![效果图](https://github.com/joker-fu/BannerPager/blob/master/app/src/main/assets/gif.gif)
 
 #### how to use：
  1. 步骤一
