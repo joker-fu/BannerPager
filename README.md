@@ -1,7 +1,7 @@
 # BannerPager
 
 #### how to use：
-Step 1. in your layout
+ 1. 步骤一
 ```
     <com.joker.pager.BannerPager
         android:id="@+id/banner_pager0"
@@ -10,18 +10,19 @@ Step 1. in your layout
         android:layout_marginBottom="10dp" />
 ```
 
-Step 2. in your code，configuration the options you need
+ 2. 步骤二
 ```        
+    //配置你需要的轮播参数
     final PagerOptions pagerOptions0 = new PagerOptions.Builder(this)
             .setTurnDuration(2000)
             .setLoopEnable(false)
             .setIndicatorColor(Color.RED, Color.BLUE)
-            .setPrePagerWidth(100)
+            .setIndicatorSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, getResources().getDisplayMetrics()))
             .setIndicatorAlign(RelativeLayout.CENTER_IN_PARENT)
             .setIndicatorMarginBottom(300)
-            .setIndicatorAlign(RelativeLayout.ALIGN_PARENT_LEFT)
             .build();
-            
+     
+    //设置BannerPager
     bannerPager0
             .setPagerOptions(pagerOptions0)
             .setPages(data, new ViewHolderCreator<BannerPagerHolder>() {
@@ -31,9 +32,28 @@ Step 2. in your code，configuration the options you need
                     return new BannerPagerHolder(view);
                 }
             });
+            
+    
+    //当前轮播的ViewHolder
+    private class BannerPagerHolder extends ViewHolder<String> {
+
+        private ImageView mImage;
+
+        private BannerPagerHolder(View itemView) {
+            super(itemView);
+            mImage = itemView.findViewById(R.id.image);
+        }
+
+        @Override
+        public void onBindView(View view, String data, int position) {
+            Glide.with(mImage.getContext())
+                    .load(data)
+                    .into(mImage);
+        }
+    }
 ```
 
-Step 3. in your code，call startTurning or stopTurning
+ 3. 步骤三
 ```
     @Override
     protected void onResume() {
@@ -66,6 +86,6 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 ```
     dependencies {
-        compile 'com.github.joker-fu:BannerPager:0.0.1'
+        compile 'com.github.joker-fu:BannerPager:0.0.2'
     }
 ```
