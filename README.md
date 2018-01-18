@@ -1,6 +1,8 @@
 # BannerPager
 
-#### How to use：
+#### how to use：
+
+#### Library projects：
 
 Step 1. Add the JitPack repository to your build file
 
@@ -17,6 +19,6 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 ```
     dependencies {
-        compile 'com.github.joker-fu:BannerPager:1.0.0'
+        compile 'com.github.joker-fu:BannerPager:1.0.2'
     }
 ``
