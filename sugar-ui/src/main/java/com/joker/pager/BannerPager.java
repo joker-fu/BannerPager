@@ -18,7 +18,7 @@ import android.widget.RelativeLayout;
 
 import com.joker.pager.adapter.BannerViewPagerAdapter;
 import com.joker.pager.holder.ViewHolderCreator;
-import com.joker.pager.listener.OnItemCLickListener;
+import com.joker.pager.listener.OnItemClickListener;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -315,11 +315,11 @@ public class BannerPager<T> extends RelativeLayout implements ViewPager.OnPageCh
     /**
      * 设置 Item点击监听
      *
-     * @param listener OnItemCLickListener
+     * @param listener OnItemClickListener
      * @return BannerPager
      */
-    public BannerPager<T> setOnItemClickListener(OnItemCLickListener listener) {
-        mViewPager.setOnItemCLickListener(listener);
+    public BannerPager<T> setOnItemClickListener(OnItemClickListener listener) {
+        mViewPager.setOnItemClickListener(listener);
         return this;
     }
 }

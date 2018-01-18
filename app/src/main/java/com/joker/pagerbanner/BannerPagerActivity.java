@@ -15,7 +15,7 @@ import com.joker.pager.BannerPager;
 import com.joker.pager.PagerOptions;
 import com.joker.pager.holder.ViewHolder;
 import com.joker.pager.holder.ViewHolderCreator;
-import com.joker.pager.listener.OnItemCLickListener;
+import com.joker.pager.listener.OnItemClickListener;
 import com.joker.pager.transformer.AccordionTransformer;
 import com.joker.pager.transformer.CubeOutTransformer;
 import com.joker.pager.transformer.DepthCardTransformer;
@@ -149,16 +149,18 @@ public class BannerPagerActivity extends AppCompatActivity {
                         return new BannerPagerHolder(view);
                     }
                 });
-        bannerPager1.setOnItemClickListener(new OnItemCLickListener() {
+        bannerPager1.setOnItemClickListener(new OnItemClickListener() {
+
             @Override
-            public void onItemClick(int position) {
-                Toast.makeText(BannerPagerActivity.this, "点击：" + position, Toast.LENGTH_SHORT).show();
+            public void onItemClick(int location, int position) {
+                Toast.makeText(BannerPagerActivity.this, location + ": 点击：" + position, Toast.LENGTH_SHORT).show();
             }
         });
-        bannerPager2.setOnItemClickListener(new OnItemCLickListener() {
+        bannerPager2.setOnItemClickListener(new OnItemClickListener() {
+
             @Override
-            public void onItemClick(int position) {
-                Toast.makeText(BannerPagerActivity.this, "点击：" + position, Toast.LENGTH_SHORT).show();
+            public void onItemClick(int location, int position) {
+                Toast.makeText(BannerPagerActivity.this, location + ": 点击：" + position, Toast.LENGTH_SHORT).show();
             }
         });
         bannerPager3

@@ -9,7 +9,7 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 
 import com.joker.pager.adapter.BannerViewPagerAdapter;
-import com.joker.pager.listener.OnItemCLickListener;
+import com.joker.pager.listener.OnItemClickListener;
 
 /**
  * CommonViewPager
@@ -20,7 +20,7 @@ import com.joker.pager.listener.OnItemCLickListener;
 
 public class BannerViewPager extends ViewPager {
 
-    private OnItemCLickListener mOnItemCLickListener;
+    private OnItemClickListener mOnItemClickListener;
     private float oldX = 0, sens = 0;
 
     public BannerViewPager(Context context) {
@@ -45,7 +45,15 @@ public class BannerViewPager extends ViewPager {
                 break;
             case MotionEvent.ACTION_UP:
                 final float newX = ev.getX();
-                if (Math.abs(oldX - newX) < sens && checkRange2Click(ev) == 0) {
+                if (Math.abs(oldX - newX) < sens) {
+                    final int location = checkClickLocation(ev);
+                    final PagerAdapter adapter = getAdapter();
+                    if (adapter instanceof BannerViewPagerAdapter) {
+                        final int position = ((BannerViewPagerAdapter) adapter).toRealPosition(super.getCurrentItem());
+                        if (mOnItemClickListener != null) {
+                            mOnItemClickListener.onItemClick(location, position);
+                        }
+                    }
                     performClick();
                 }
                 oldX = 0;
@@ -62,7 +70,7 @@ public class BannerViewPager extends ViewPager {
      * @param ev MotionEvent
      * @return -1 左边 0 中间 1 右边
      */
-    private int checkRange2Click(MotionEvent ev) {
+    private int checkClickLocation(MotionEvent ev) {
         final ViewGroup.MarginLayoutParams mp = (MarginLayoutParams) getLayoutParams();
         final int max = Math.max(mp.leftMargin, mp.rightMargin);
         if (ev.getX() < max) {
@@ -75,13 +83,6 @@ public class BannerViewPager extends ViewPager {
             return 1;
         } else {
             //点击当前显示
-            final PagerAdapter adapter = getAdapter();
-            if (adapter instanceof BannerViewPagerAdapter) {
-                final int position = ((BannerViewPagerAdapter) adapter).toRealPosition(super.getCurrentItem());
-                if (mOnItemCLickListener != null) {
-                    mOnItemCLickListener.onItemClick(position);
-                }
-            }
             return 0;
         }
     }
@@ -91,7 +92,7 @@ public class BannerViewPager extends ViewPager {
         return super.performClick();
     }
 
-    public void setOnItemCLickListener(OnItemCLickListener listener) {
-        mOnItemCLickListener = listener;
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mOnItemClickListener = listener;
     }
 }

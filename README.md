@@ -58,12 +58,14 @@
     @Override
     protected void onResume() {
         super.onResume();
+        //适当位置开启轮播
         bannerPager0.startTurning();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        //适当位置停止轮播
         bannerPager0.stopTurning();
     }
 ```
@@ -86,6 +88,6 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 ```
     dependencies {
-        compile 'com.github.joker-fu:BannerPager:0.0.2'
+        compile 'com.github.joker-fu:BannerPager:0.0.3'
     }
 ```
