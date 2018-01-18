@@ -1,5 +1,7 @@
 # BannerPager
 
+![效果图](http://114.67.156.211/github/BannerPager/gif.gif)
+
 #### how to use：
  1. 步骤一
 ```

@@ -24,7 +24,7 @@ public final class PagerOptions {
     int mIndicatorVisibility;
     Drawable[] mIndicatorDrawable;
     int mIndicatorDistance;
-    boolean mLoopEnable = true;
+    boolean mLoopEnable;
     int mDelayedTime;
     int mIndicatorAlign;
     PageTransformer mPageTransformer;
