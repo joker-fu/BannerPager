@@ -2,7 +2,7 @@
 
 buildscript {
     ext.kotlin_version = '1.1.51'
-    ext.mavenPlugin = "2.0"
+    ext.maven_plugin_version = "2.0"
     repositories {
         google()
         jcenter()
@@ -10,7 +10,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "com.github.dcendents:android-maven-gradle-plugin:$mavenPlugin"
+        classpath "com.github.dcendents:android-maven-gradle-plugin:$maven_plugin_version"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -32,7 +32,7 @@ task clean(type: Delete) {
 ext {
     // Sdk and tools
     // Support library and architecture components support minSdk 16 and above.
-    minSdkVersion = 16
+    minSdkVersion = 15
     targetSdkVersion = 26
     compileSdkVersion = 26
 
@@ -41,7 +41,6 @@ ext {
     junitVersion = '4.12'
     runnerVersion = '1.0.1'
     espressoCoreVersion = '3.0.1'
-    constraintLayoutVersion = '1.0.2'
 
     //third
     glideVersion = "4.3.1"
