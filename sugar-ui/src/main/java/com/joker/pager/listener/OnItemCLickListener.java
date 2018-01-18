@@ -1,4 +1,4 @@
-package com.joker.banner.listener;
+package com.joker.pager.listener;
 
 /**
  * OnItemCLickListener

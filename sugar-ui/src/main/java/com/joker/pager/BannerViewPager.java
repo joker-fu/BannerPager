@@ -1,4 +1,4 @@
-package com.joker.banner;
+package com.joker.pager;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -8,8 +8,8 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 
-import com.joker.banner.adapter.BannerViewPagerAdapter;
-import com.joker.banner.listener.OnItemCLickListener;
+import com.joker.pager.adapter.BannerViewPagerAdapter;
+import com.joker.pager.listener.OnItemCLickListener;
 
 /**
  * CommonViewPager

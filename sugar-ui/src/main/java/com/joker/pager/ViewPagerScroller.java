@@ -1,4 +1,4 @@
-package com.joker.banner;
+package com.joker.pager;
 
 import android.content.Context;
 import android.view.animation.Interpolator;

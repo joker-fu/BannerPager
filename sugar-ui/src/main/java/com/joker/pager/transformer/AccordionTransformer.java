@@ -1,4 +1,4 @@
-package com.joker.banner.transformer;
+package com.joker.pager.transformer;
 
 import android.view.View;
 

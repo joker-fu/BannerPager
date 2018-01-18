@@ -1,4 +1,4 @@
-package com.joker.banner.holder;
+package com.joker.pager.holder;
 
 import android.view.View;
 

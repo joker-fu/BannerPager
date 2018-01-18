@@ -12,31 +12,31 @@
         android:orientation="vertical"
         tools:context="com.joker.sugar.BannerPagerActivity">
 
-        <com.joker.banner.BannerPager
+        <com.joker.pager.BannerPager
             android:id="@+id/banner_pager0"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginBottom="10dp" />
 
-        <com.joker.banner.BannerPager
+        <com.joker.pager.BannerPager
             android:id="@+id/banner_pager1"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginBottom="10dp" />
 
-        <com.joker.banner.BannerPager
+        <com.joker.pager.BannerPager
             android:id="@+id/banner_pager2"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginBottom="10dp" />
 
-        <com.joker.banner.BannerPager
+        <com.joker.pager.BannerPager
             android:id="@+id/banner_pager3"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginBottom="10dp" />
 
-        <com.joker.banner.BannerPager
+        <com.joker.pager.BannerPager
             android:id="@+id/banner_pager4"
             android:layout_width="match_parent"
             android:layout_height="200dp"

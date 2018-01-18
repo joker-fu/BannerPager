@@ -1,4 +1,4 @@
-package com.joker.banner;
+package com.joker.pager;
 
 import android.content.Context;
 import android.os.Handler;
@@ -16,10 +16,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.joker.pager.R;
-import com.joker.banner.adapter.BannerViewPagerAdapter;
-import com.joker.banner.holder.ViewHolderCreator;
-import com.joker.banner.listener.OnItemCLickListener;
+import com.joker.pager.adapter.BannerViewPagerAdapter;
+import com.joker.pager.holder.ViewHolderCreator;
+import com.joker.pager.listener.OnItemCLickListener;
 
 import java.lang.reflect.Field;
 import java.util.List;

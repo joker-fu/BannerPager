@@ -7,7 +7,7 @@
     <!--设置margin 左右两天就有间距-->
     <!--android:layout_marginLeft="30dp"-->
     <!--android:layout_marginRight="30dp"-->
-    <com.joker.banner.BannerViewPager
+    <com.joker.pager.BannerViewPager
         android:id="@+id/widget_view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

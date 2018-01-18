@@ -1,4 +1,4 @@
-package com.joker.banner;
+package com.joker.pager;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -8,8 +8,6 @@ import android.support.annotation.DrawableRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager.*;
 import android.util.TypedValue;
-
-import com.joker.pager.R;
 
 /**
  * PagerOptions

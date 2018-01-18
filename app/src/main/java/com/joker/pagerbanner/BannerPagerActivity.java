@@ -11,15 +11,15 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.joker.banner.BannerPager;
-import com.joker.banner.PagerOptions;
-import com.joker.banner.holder.ViewHolder;
-import com.joker.banner.holder.ViewHolderCreator;
-import com.joker.banner.listener.OnItemCLickListener;
-import com.joker.banner.transformer.AccordionTransformer;
-import com.joker.banner.transformer.CubeOutTransformer;
-import com.joker.banner.transformer.DepthCardTransformer;
-import com.joker.banner.transformer.ScaleTransformer;
+import com.joker.pager.BannerPager;
+import com.joker.pager.PagerOptions;
+import com.joker.pager.holder.ViewHolder;
+import com.joker.pager.holder.ViewHolderCreator;
+import com.joker.pager.listener.OnItemCLickListener;
+import com.joker.pager.transformer.AccordionTransformer;
+import com.joker.pager.transformer.CubeOutTransformer;
+import com.joker.pager.transformer.DepthCardTransformer;
+import com.joker.pager.transformer.ScaleTransformer;
 
 import java.util.ArrayList;
 import java.util.List;

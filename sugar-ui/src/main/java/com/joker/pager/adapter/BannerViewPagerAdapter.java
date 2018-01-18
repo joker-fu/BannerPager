@@ -1,4 +1,4 @@
-package com.joker.banner.adapter;
+package com.joker.pager.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
@@ -6,9 +6,9 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.joker.banner.BannerViewPager;
-import com.joker.banner.holder.ViewHolder;
-import com.joker.banner.holder.ViewHolderCreator;
+import com.joker.pager.BannerViewPager;
+import com.joker.pager.holder.ViewHolder;
+import com.joker.pager.holder.ViewHolderCreator;
 
 import java.util.List;
 
