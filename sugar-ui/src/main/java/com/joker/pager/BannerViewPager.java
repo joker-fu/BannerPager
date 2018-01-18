@@ -39,21 +39,19 @@ public class BannerViewPager extends ViewPager {
 
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        if (mOnItemCLickListener != null) {
-            switch (ev.getAction()) {
-                case MotionEvent.ACTION_DOWN:
-                    oldX = ev.getX();
-                    break;
-                case MotionEvent.ACTION_UP:
-                    final float newX = ev.getX();
-                    if (Math.abs(oldX - newX) < sens && checkRange2Click(ev) == 0) {
-                        performClick();
-                    }
-                    oldX = 0;
-                    break;
-                default:
-                    break;
-            }
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                oldX = ev.getX();
+                break;
+            case MotionEvent.ACTION_UP:
+                final float newX = ev.getX();
+                if (Math.abs(oldX - newX) < sens && checkRange2Click(ev) == 0) {
+                    performClick();
+                }
+                oldX = 0;
+                break;
+            default:
+                break;
         }
         return super.onTouchEvent(ev);
     }
@@ -80,7 +78,9 @@ public class BannerViewPager extends ViewPager {
             final PagerAdapter adapter = getAdapter();
             if (adapter instanceof BannerViewPagerAdapter) {
                 final int position = ((BannerViewPagerAdapter) adapter).toRealPosition(super.getCurrentItem());
-                mOnItemCLickListener.onItemClick(position);
+                if (mOnItemCLickListener != null) {
+                    mOnItemCLickListener.onItemClick(position);
+                }
             }
             return 0;
         }

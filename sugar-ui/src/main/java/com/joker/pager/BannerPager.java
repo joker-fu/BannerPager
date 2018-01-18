@@ -241,6 +241,8 @@ public class BannerPager<T> extends RelativeLayout implements ViewPager.OnPageCh
         mViewPager.setPageTransformer(true, mPagerOptions.mPageTransformer);
         //设置滚动速度
         mScroller.setScrollDuration(mPagerOptions.mScrollDuration);
+        //设置指示器显示隐藏
+        mIndicatorLayout.setVisibility(mPagerOptions.mIndicatorVisibility);
     }
 
     public void clearPages() {

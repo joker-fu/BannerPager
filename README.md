@@ -49,6 +49,7 @@ Step 3. in your code，call startTurning or stopTurning
 ```
 
 #### Library projects：
+[![](https://jitpack.io/v/joker-fu/BannerPager.svg)](https://jitpack.io/#joker-fu/BannerPager)
 
 Step 1. Add the JitPack repository to your build file
 

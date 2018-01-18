@@ -86,10 +86,11 @@ public class BannerPagerActivity extends AppCompatActivity {
                 .setTurnDuration(2000)
                 .setLoopEnable(false)
                 .setIndicatorColor(Color.RED, Color.BLUE)
-                .setPrePagerWidth(100)
+                .setPrePagerWidth((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 40, getResources().getDisplayMetrics()))
+                .setPagePadding((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, getResources().getDisplayMetrics()))
                 .setIndicatorAlign(RelativeLayout.CENTER_IN_PARENT)
                 .setIndicatorMarginBottom(300)
-                .setIndicatorAlign(RelativeLayout.ALIGN_PARENT_LEFT)
+                .setIndicatorVisibility(View.GONE)
                 .build();
 
         final PagerOptions pagerOptions1 = new PagerOptions.Builder(this)
