@@ -9,7 +9,7 @@ import android.view.View;
  * @date 1518/1/12.
  */
 
-public class DepthCardTransformer extends ABaseTransformer {
+public class DepthCardTransformer extends BaseTransformer {
 
     @Override
     public void transformPage(View page, float position) {

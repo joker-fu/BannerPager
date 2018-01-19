@@ -4,13 +4,13 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 /**
- * ABaseTransformer
+ * BaseTransformer
  *
  * @author joker
  * @date 2018/1/12.
  */
 
-public abstract class ABaseTransformer implements ViewPager.PageTransformer {
+public abstract class BaseTransformer implements ViewPager.PageTransformer {
 
     /**
      * Called each {@link #transformPage(View, float)}.

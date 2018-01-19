@@ -9,9 +9,19 @@ import android.view.View;
  * @date 2018/1/11.
  */
 
-public class ScaleTransformer extends ABaseTransformer {
-    private static final float MIN_SCALE = 0.88F;
-    private static final float MIN_ALPHA = 0.88F;
+public class ScaleTransformer extends BaseTransformer {
+    private final float MIN_SCALE;
+    private final float MIN_ALPHA;
+
+    public ScaleTransformer() {
+        MIN_SCALE = 0.88F;
+        MIN_ALPHA = 0.88F;
+    }
+
+    public ScaleTransformer(float minScale, float minAlpha) {
+        MIN_SCALE = minScale;
+        MIN_ALPHA = minAlpha;
+    }
 
     @Override
     public void transformPage(View page, float position) {

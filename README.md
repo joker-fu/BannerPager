@@ -15,22 +15,23 @@
  2. 步骤二
 ```        
     //配置你需要的轮播参数
-    final PagerOptions pagerOptions0 = new PagerOptions.Builder(this)
+    final PagerOptions pagerOptions2 = new PagerOptions.Builder(this)
             .setTurnDuration(2000)
-            .setLoopEnable(false)
             .setIndicatorColor(Color.RED, Color.BLUE)
-            .setIndicatorSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, getResources().getDisplayMetrics()))
+            .setIndicatorSize(16)
+            .setPagePadding(16)
+            .setPrePagerWidth(60)
             .setIndicatorAlign(RelativeLayout.CENTER_IN_PARENT)
-            .setIndicatorMarginBottom(300)
+            .setIndicatorMarginBottom(40)
             .build();
      
     //设置BannerPager
-    bannerPager0
-            .setPagerOptions(pagerOptions0)
+    bannerPager2
+            .setPagerOptions(pagerOptions2)
             .setPages(data, new ViewHolderCreator<BannerPagerHolder>() {
                 @Override
                 public BannerPagerHolder createViewHolder() {
-                    final View view = LayoutInflater.from(BannerPagerActivity.this).inflate(R.layout.item_image_banner, null);
+                    final View view = LayoutInflater.from(CommonBannerActivity.this).inflate(R.layout.item_image_banner, null);
                     return new BannerPagerHolder(view);
                 }
             });
@@ -90,6 +91,6 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 ```
     dependencies {
-        compile 'com.github.joker-fu:BannerPager:0.0.4'
+        compile 'com.github.joker-fu:BannerPager:0.0.5'
     }
 ```

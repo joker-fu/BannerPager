@@ -42,7 +42,7 @@ final class IndicatorView extends AppCompatImageView {
 
         if (pagerOptions.mIndicatorSize != -1) {
             final ViewGroup.LayoutParams layoutParams = getLayoutParams();
-            layoutParams.width = layoutParams.height = pagerOptions.mIndicatorSize;
+            layoutParams.width = layoutParams.height = pagerOptions.mIndicatorSize + pagerOptions.mIndicatorDistance;
             setLayoutParams(layoutParams);
         }
         setScaleType(ScaleType.FIT_XY);

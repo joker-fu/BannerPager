@@ -9,7 +9,7 @@ import android.view.View;
  * @date 2018/1/12.
  */
 
-public class AccordionTransformer extends ABaseTransformer {
+public class AccordionTransformer extends BaseTransformer {
 
     @Override
     protected void onTransform(View view, float position) {

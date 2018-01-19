@@ -9,7 +9,7 @@ import android.view.View;
  * @date 2018/1/12.
  */
 
-public class CubeOutTransformer extends ABaseTransformer {
+public class CubeOutTransformer extends BaseTransformer {
 
     @Override
     protected void onTransform(View view, float position) {
