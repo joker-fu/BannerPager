@@ -71,9 +71,9 @@ public class BannerViewPagerAdapter<T> extends PagerAdapter {
         if (mLoopEnable) {
             int position = mViewPager.getCurrentItem();
             if (position == 0) {
-                position = getRealCount();
+                position = getRealCount() * MULTIPLE_COUNT >> 2;
             } else if (position == getCount() - 1) {
-                position = getRealCount() - 1;
+                position = (getRealCount() - 1) * MULTIPLE_COUNT >> 2;
             }
             try {
                 mViewPager.setCurrentItem(position, false);

@@ -75,11 +75,11 @@ public class BannerViewPager extends ViewPager {
         final int max = Math.max(mp.leftMargin, mp.rightMargin);
         if (ev.getX() < max) {
             //点击左边预显示部分
-            setCurrentItem(getCurrentItem() - 1, false);
+            setCurrentItem(getCurrentItem() - 1, true);
             return -1;
         } else if (ev.getX() > getResources().getDisplayMetrics().widthPixels - max) {
             //点击右边预显示部分
-            setCurrentItem(getCurrentItem() + 1, false);
+            setCurrentItem(getCurrentItem() + 1, true);
             return 1;
         } else {
             //点击当前显示

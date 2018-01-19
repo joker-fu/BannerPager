@@ -50,7 +50,7 @@ public class BannerPagerActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         bannerPager0.startTurning();
-        bannerPager1.startTurning();
+//        bannerPager1.startTurning();
         bannerPager2.startTurning();
         bannerPager3.startTurning();
         bannerPager4.startTurning();
@@ -60,7 +60,7 @@ public class BannerPagerActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         bannerPager0.stopTurning();
-        bannerPager1.stopTurning();
+//        bannerPager1.stopTurning();
         bannerPager2.stopTurning();
         bannerPager3.stopTurning();
         bannerPager4.stopTurning();
@@ -82,11 +82,12 @@ public class BannerPagerActivity extends AppCompatActivity {
         data.add("http://7xi8d6.com1.z0.glb.clouddn.com/20171228085004_5yEHju_Screenshot.jpeg");
 
 
+        int size = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, getResources().getDisplayMetrics());
         final PagerOptions pagerOptions0 = new PagerOptions.Builder(this)
                 .setTurnDuration(2000)
                 .setLoopEnable(false)
                 .setIndicatorColor(Color.RED, Color.BLUE)
-                .setIndicatorSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, getResources().getDisplayMetrics()))
+                .setIndicatorSize(size)
                 .setIndicatorAlign(RelativeLayout.CENTER_IN_PARENT)
                 .setIndicatorMarginBottom(300)
                 .build();
@@ -95,8 +96,8 @@ public class BannerPagerActivity extends AppCompatActivity {
                 .setTurnDuration(2000)
                 .setPagePadding(20)
                 .setPrePagerWidth(80)
-                .setIndicatorSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, getResources().getDisplayMetrics()))
-                .setLoopEnable(false)
+                .setIndicatorSize(size)
+                .setLoopEnable(true)
                 .setIndicatorAlign(RelativeLayout.CENTER_IN_PARENT)
                 .setPageTransformer(new ScaleTransformer())
                 .build();

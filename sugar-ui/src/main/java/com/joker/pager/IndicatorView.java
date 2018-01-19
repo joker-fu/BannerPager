@@ -36,12 +36,15 @@ final class IndicatorView extends AppCompatImageView {
 
     public void setPagerOptions(PagerOptions pagerOptions) {
         setImageDrawable(pagerOptions.mIndicatorDrawable[0]);
-        setPadding(pagerOptions.mIndicatorDistance, 0, pagerOptions.mIndicatorDistance, 0);
+
+        final int padding = pagerOptions.mIndicatorDistance >> 1;
+        setPadding(padding, padding, padding, padding);
 
         if (pagerOptions.mIndicatorSize != -1) {
             final ViewGroup.LayoutParams layoutParams = getLayoutParams();
             layoutParams.width = layoutParams.height = pagerOptions.mIndicatorSize;
             setLayoutParams(layoutParams);
         }
+        setScaleType(ScaleType.FIT_XY);
     }
 }

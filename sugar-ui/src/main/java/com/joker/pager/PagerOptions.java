@@ -173,7 +173,7 @@ public final class PagerOptions {
         }
 
         private Drawable createDrawable(@ColorInt int color) {
-            final int size = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, mContext.getResources().getDisplayMetrics());
+            final int size = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 1, mContext.getResources().getDisplayMetrics());
             final GradientDrawable gd = new GradientDrawable();
             gd.setColor(color);
             gd.setShape(GradientDrawable.OVAL);
