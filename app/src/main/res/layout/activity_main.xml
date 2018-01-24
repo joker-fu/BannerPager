@@ -92,6 +92,15 @@
             android:layout_height="0.5dp"
             android:background="@android:color/darker_gray" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:onClick="buttonSix"
+            android:text="RecyclerView嵌套Banner"
+            tools:ignore="HardcodedText" />
+
+
     </android.support.v7.widget.LinearLayoutCompat>
 
 </android.support.v4.widget.NestedScrollView>

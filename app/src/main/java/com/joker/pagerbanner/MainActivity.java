@@ -38,4 +38,8 @@ public class MainActivity extends AppCompatActivity {
     public void buttonFive(View view) {
         startActivity(new Intent(this, CubeOutBannerActivity.class));
     }
+
+    public void buttonSix(View view) {
+        startActivity(new Intent(this, RecyclerViewActivity.class));
+    }
 }

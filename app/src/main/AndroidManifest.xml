@@ -33,6 +33,7 @@
         <activity
             android:name=".CubeOutBannerActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".RecyclerViewActivity"></activity>
     </application>
 
 </manifest>

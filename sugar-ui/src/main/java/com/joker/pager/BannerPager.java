@@ -41,6 +41,7 @@ public class BannerPager<T> extends RelativeLayout implements ViewPager.OnPageCh
 
     private PagerOptions mPagerOptions;
     private boolean isStartLoop;
+    private boolean isDetached2StopLoop;
 
     private ViewPagerScroller mScroller;
     private OnPageChangeListener mPageChangeListener;
@@ -55,6 +56,7 @@ public class BannerPager<T> extends RelativeLayout implements ViewPager.OnPageCh
             }
             mViewPager.setCurrentItem(currentItem);
             sendHandlerEmptyMessage();
+            trace("切换轮播图");
             return true;
         }
     });
@@ -88,6 +90,26 @@ public class BannerPager<T> extends RelativeLayout implements ViewPager.OnPageCh
         mViewPager.setOffscreenPageLimit(3);
         mViewPager.addOnPageChangeListener(this);
         setOnTouchListener(mOnTouchListener);
+    }
+
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (isDetached2StopLoop && !isStartLoop) {
+            startTurning();
+            isDetached2StopLoop = false;
+        }
+        trace("onAttachedToWindow");
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (!isDetached2StopLoop && isStartLoop) {
+            stopTurning();
+            isDetached2StopLoop = true;
+        }
+        trace("onDetachedFromWindow");
     }
 
     /**
@@ -134,9 +156,6 @@ public class BannerPager<T> extends RelativeLayout implements ViewPager.OnPageCh
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        if (mPagerOptions.mDebug) {
-            Log.d(TAG, "====> dispatchTouchEvent: " + ev.getX());
-        }
         handleEvent(ev);
         return super.dispatchTouchEvent(ev);
     }
@@ -150,17 +169,17 @@ public class BannerPager<T> extends RelativeLayout implements ViewPager.OnPageCh
             case MotionEvent.ACTION_DOWN:
             case MotionEvent.ACTION_MOVE:
             case MotionEvent.ACTION_OUTSIDE:
+                trace("dispatchTouchEvent: " + ev.getX());
                 removeHandlerMessages();
                 break;
             case MotionEvent.ACTION_UP:
             case MotionEvent.ACTION_CANCEL:
+                trace("dispatchTouchEvent: " + ev.getX());
                 removeHandlerMessages();
                 sendHandlerEmptyMessage();
                 break;
             default:
-                if (mPagerOptions.mDebug) {
-                    Log.d(TAG, "========> 未知事件: " + ev.getAction());
-                }
+                trace("未知事件: " + ev.getAction());
                 break;
         }
     }
@@ -218,9 +237,7 @@ public class BannerPager<T> extends RelativeLayout implements ViewPager.OnPageCh
             indicator.setPagerOptions(mPagerOptions);
         }
         setIndicatorSelected(mViewPager.getCurrentItem());
-        if (mPagerOptions.mDebug) {
-            Log.d(TAG, "indicator count : " + mIndicatorLayout.getChildCount());
-        }
+        trace("indicator count : " + mIndicatorLayout.getChildCount());
     }
 
     private void handlePagerOptions() {
@@ -263,10 +280,12 @@ public class BannerPager<T> extends RelativeLayout implements ViewPager.OnPageCh
             final int multiple = mViewPager.getCurrentItem() / realCount;
             position = position + multiple * realCount;
         }
-        if (mPagerOptions.mDebug) {
-            Log.d(TAG, "new position: " + position);
-        }
         mViewPager.setCurrentItem(position, false);
+        trace("new position: " + position);
+    }
+
+    public boolean isStartLoop() {
+        return isStartLoop;
     }
 
     /**
@@ -284,6 +303,8 @@ public class BannerPager<T> extends RelativeLayout implements ViewPager.OnPageCh
         mViewPager.addOnPageChangeListener(this);
         sendHandlerEmptyMessage();
         isStartLoop = true;
+        isDetached2StopLoop = false;
+        trace("startTurning ");
     }
 
     /**
@@ -293,6 +314,14 @@ public class BannerPager<T> extends RelativeLayout implements ViewPager.OnPageCh
         removeHandlerMessages();
         mViewPager.removeOnPageChangeListener(this);
         isStartLoop = false;
+        isDetached2StopLoop = true;
+        trace("stopTurning ");
+    }
+
+    private void trace(String msg) {
+        if (mPagerOptions.mDebug) {
+            Log.d(TAG, "===> " + msg);
+        }
     }
 
     /**
