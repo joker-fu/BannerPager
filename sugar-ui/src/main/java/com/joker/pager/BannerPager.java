@@ -207,6 +207,12 @@ public class BannerPager<T> extends RelativeLayout implements ViewPager.OnPageCh
         mCurrentIndicator = indicator;
     }
 
+    /**
+     * 设置 PagerOptions
+     *
+     * @param options options
+     * @return BannerPager<T>
+     */
     public BannerPager<T> setPagerOptions(PagerOptions options) {
         mPagerOptions = options;
         return this;
@@ -332,7 +338,7 @@ public class BannerPager<T> extends RelativeLayout implements ViewPager.OnPageCh
     }
 
     /**
-     * 设置 page change listener
+     * 设置 page 改变监听
      *
      * @param listener OnPageChangeListener
      */
