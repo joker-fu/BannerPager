@@ -140,6 +140,9 @@ public class BannerPager<T> extends RelativeLayout implements ViewPager.OnPageCh
     @Override
     public void onPageSelected(int position) {
         // 切换indicator
+        if(mIndicatorLayout.getChildCount()==0){
+            return;
+        }
         final int realPosition = position % mIndicatorLayout.getChildCount();
         setIndicatorSelected(realPosition);
         if (mPageChangeListener != null) {
